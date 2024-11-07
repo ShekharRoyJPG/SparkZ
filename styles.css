@@ -1,0 +1,379 @@
+/* General Reset
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  }
+  
+  .main-container {
+    width: 90%;
+    max-width: 1200px;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .greeting-container h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  #greeting-container p {
+    font-size: 1em;
+    color: #555;
+  }
+  
+  #searchBar {
+    width: 100%;
+    padding: 12px;
+    border-radius: 25px;
+    border: none;
+    font-size: 1em;
+    margin: 10px 0 20px;
+  }
+  
+  .content-sections {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  
+  .section {
+    flex: 1 1 calc(33% - 20px);
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    min-width: 250px;
+  }
+  
+  .section h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  #bookmarkInput, #noteInput {
+    width: 100%;
+    margin-top: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 768px) {
+    .section {
+      flex: 1 1 100%;
+    }
+  }
+   */
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e0f7fa;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  color: #fff;
+  text-align: center;
+  /* position: relative; */
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('background.jpg');
+  /* Replace with your background image */
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.8);
+  z-index: -1;
+}
+
+.time-container {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  text-align: left;
+}
+
+.time {
+  font-size: 4em;
+  font-weight: 500;
+}
+
+.date {
+  font-size: 1.2em;
+  margin-top: 5px;
+}
+
+.search-bar {
+  margin: 20px auto;
+  width: 60%;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 1em;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+}
+
+.bookmarks-container {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1000px;
+  text-align: left;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.tab {
+  padding: 5px 15px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+.tab.active {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.bookmarks {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.bookmarks a img {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  transition: transform 0.2s;
+}
+
+.bookmarks a img:hover {
+  transform: scale(1.1);
+}
+
+.weather-widget {
+  position: absolute;
+  top: 45%;
+  left: 5%;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 15px;
+  color: #fff;
+  width: 250px;
+  max-width: 80%;
+  text-align: left;
+}
+
+.weather-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.weather-icon {
+  font-size: 2.5em;
+}
+
+.temperature {
+  font-size: 2em;
+  margin-left: auto;
+}
+
+.quote {
+  position: absolute;
+  top: 60%;
+  left: 5%;
+  width: 250px;
+  max-width: 80%;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  border-radius: 10px;
+  text-align: left;
+  font-size: 0.9em;
+}
+
+.add-note {
+  position: absolute;
+  top: 75%;
+  left: 5%;
+  width: 250px;
+  max-width: 80%;
+}
+
+.add-note button {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1em;
+  color: #fff;
+  cursor: pointer;
+  width: 100%;
+}
+
+.side-icons {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.side-icons button {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Responsive Adjustments */
+
+@media (max-width: 1024px) {
+  .time {
+    font-size: 3em;
+  }
+
+  .search-bar {
+    width: 80%;
+  }
+
+  .weather-widget,
+  .quote,
+  .add-note {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .time {
+    font-size: 2.5em;
+  }
+
+  .bookmarks-container {
+    width: 90%;
+    top: 30%;
+  }
+
+  .search-bar {
+    width: 90%;
+    top: 12%;
+  }
+
+  .weather-widget,
+  .quote,
+  .add-note {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .side-icons {
+    right: 10px;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .time {
+    font-size: 2em;
+  }
+
+  .date {
+    font-size: 1em;
+  }
+
+  .search-bar {
+    width: 100%;
+    top: 10%;
+  }
+
+  .bookmarks {
+    gap: 10px;
+  }
+
+  .weather-widget,
+  .quote,
+  .add-note {
+    width: 90%;
+    max-width: 250px;
+  }
+
+  .bookmarks a img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .tabs {
+    gap: 5px;
+  }
+
+  .side-icons button {
+    font-size: 1.2em;
+  }
+}
