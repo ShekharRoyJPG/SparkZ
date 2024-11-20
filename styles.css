@@ -101,17 +101,38 @@ html {
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  background-color: #e0f7fa;
+   align-items: center;
+  /* background-color: #e0f7fa; */
+
 }
 
 .container {
   width: 100%;
   max-width: 1200px;
   color: #fff;
+  /* color: rgba(0, 0, 0, 0.5); */
   text-align: center;
-  /* position: relative; */
 }
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video covers the entire container */
+  transform: translate(-50%, -50%);
+  z-index: -1; /* Places the video behind the content */
+}
+
+
 
 .background {
   position: fixed;
@@ -119,7 +140,7 @@ html {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('background.jpg');
+  background-image: url('bg/img.jpg');
   /* Replace with your background image */
   background-size: cover;
   background-position: center;
@@ -129,7 +150,7 @@ html {
 
 .time-container {
   position: absolute;
-  top: 5%;
+  top: 1%;
   left: 5%;
   text-align: left;
 }
@@ -143,40 +164,101 @@ html {
   font-size: 1.2em;
   margin-top: 5px;
 }
+/* 
+.dots-icon{
+  position: absolute;
+  top: 9%;
+  right: 20%;
+} */
 
 .search-bar {
+  display: flex;
   margin: 20px auto;
-  width: 60%;
+  width: 50%;
   position: absolute;
-  top: 15%;
+  top: 5%;
   left: 50%;
   transform: translateX(-50%);
+  background-color: #fff;
+  border-radius: 30px;
+  padding: 10px 20px;
 }
 
+
+.search-icon{
+  color: rgb(47, 46, 46);
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+ 
+}
 .search-bar input {
   width: 100%;
-  padding: 10px 20px;
+  padding: 0 10px;
   font-size: 1em;
-  border-radius: 25px;
   border: none;
   outline: none;
+  border-radius: 30px;
+
+}
+
+.search-extraicons{
+  position: absolute;
+  display: flex;
+  top: 8.5%;
+  right: 18%;
+  cursor: pointer;
+}
+
+
+
+.minus i{
+  font-size: 1.8rem;
+  font-weight:600;
+  transform:rotate(90deg);
+}
+
+
+.search-extraicons img{
+  height: 4vh;
+}
+
+
+.bookmark-icons {
+  /* position: absolute; */
+  text-align: center;
+  right:12%;
+  font-size: 1rem;
+  padding: 5px 10px 5px 10px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  
+}
+
+.bookmark-icons i{
+ margin-right: 10px;
+ 
 }
 
 .bookmarks-container {
   position: absolute;
-  top: 25%;
+  top: 16%;
   left: 50%;
   transform: translateX(-50%);
-  width: 90%;
-  max-width: 1000px;
+  width: 95%;
+  max-width: 1500px;
   text-align: left;
+  display: flex;
+  justify-content: space-evenly;
+  
 }
 
 .tabs {
   display: flex;
   gap: 10px;
-  justify-content: center;
+  /* justify-content:center; */
   flex-wrap: wrap;
+ 
 }
 
 .tab {
@@ -186,6 +268,7 @@ html {
   color: #fff;
   cursor: pointer;
   font-size: 0.9em;
+  border: 1px solid white;
 }
 
 .tab.active {
@@ -195,7 +278,7 @@ html {
 .bookmarks {
   display: flex;
   gap: 15px;
-  margin-top: 10px;
+  margin-top: -150px;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -211,23 +294,106 @@ html {
   transform: scale(1.1);
 }
 
+.google-items{
+  
+  position: absolute;
+  right: 5%;
+  top: 15%;
+  background-color: #fff;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-evenly;
+   color: #212121;
+   height: auto;
+   width: 20vw;
+   padding: 25px;
+   gap: 10px;
+   border-radius: 10px;
+
+}
+
+.container2{
+  display: none;
+}
+
+
+.google-items div{
+  height: 76px;
+  width: 75px;
+ padding: 9px;
+}
+
+.google-items div:hover{
+  box-shadow:0 0 6px rgba(119, 115, 115, 0.5);
+}
+.google-items a img{
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  transition: transform 0.2s;
+  
+}
+
+.google-items p{
+  font-size: 0.9rem;
+}
+
 .weather-widget {
   position: absolute;
-  top: 45%;
+  top: 32%;
   left: 5%;
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 15px;
   padding: 15px;
   color: #fff;
-  width: 250px;
+  width: 280px;
   max-width: 80%;
   text-align: left;
+
+  /* glass */
+
+background: rgba(236, 219, 219, 0.16);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(10.9px);
+-webkit-backdrop-filter: blur(10.9px);
+border: 1px solid rgba(236, 219, 219, 0.38);
+
+
+
+
 }
 
 .weather-info {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
+
+}
+.weather-info h3{
+  font-size: 1.5em;
+}
+
+.weather-info p{
+  font-size: 0.8rem;
+}
+
+.location{
+  font-size: 0.7rem;
+  background-color:transparent;
+  border: 1px solid white;
+  border-radius: 20px;
+  margin-top: 20px;
+  width: 7.5vw;
+  text-align: center;
+  padding: 5px;
+  cursor: pointer;
+  
+}
+.location:hover{
+  background-color: #fff;
+  color: black;
+
 }
 
 .weather-icon {
@@ -235,58 +401,90 @@ html {
 }
 
 .temperature {
-  font-size: 2em;
-  margin-left: auto;
+  font-size: 1.6em;
+ 
 }
+
 
 .quote {
   position: absolute;
-  top: 60%;
+  top: 54%;
   left: 5%;
-  width: 250px;
+  width: 280px;
   max-width: 80%;
-  background-color: rgba(255, 255, 255, 0.2);
+  /* background-color: rgba(255, 255, 255, 0.3); */
   padding: 15px;
   border-radius: 10px;
   text-align: left;
   font-size: 0.9em;
+  /* glass */
+background: rgba(236, 219, 219, 0.16);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(10.9px);
+-webkit-backdrop-filter: blur(10.9px);
+border: 1px solid rgba(236, 219, 219, 0.38);
+
+  
 }
+ 
+.arrow{
+  border: none;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 60%;
+}
+
 
 .add-note {
   position: absolute;
-  top: 75%;
+  top: 74%;
   left: 5%;
-  width: 250px;
+  width: 280px;
   max-width: 80%;
+  /* border: 1px solid white;
+  border-radius: 20px; */
+  /* glass */
+  
 }
 
 .add-note button {
-  background-color: rgba(255, 255, 255, 0.2);
+background: rgba(236, 219, 219, 0.16);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(10.9px);
+-webkit-backdrop-filter: blur(10.9px);
+border: 1px solid rgba(236, 219, 219, 0.38);
+
   padding: 10px 20px;
-  border: none;
-  border-radius: 20px;
   font-size: 1em;
   color: #fff;
   cursor: pointer;
   width: 100%;
 }
 
+
 .side-icons {
   position: fixed;
-  right: 20px;
+  right: 0;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  height: 100vh;
+
 }
 
 .side-icons button {
   background: none;
-  border: none;
-  font-size: 1.5em;
+  border:none;
+  font-size: 1.2em;
   color: #fff;
   cursor: pointer;
+  padding: 5px;
 }
 
 /* Responsive Adjustments */
